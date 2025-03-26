@@ -1,0 +1,15 @@
+#root {
+  max-width: 1280px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.btn {
+  border: 0;
+}

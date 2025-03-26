@@ -1,0 +1,25 @@
+.info__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+h4 {
+  text-align: center;
+}
+
+.verb {
+  padding: 0px 10px 10px 10px;
+}
+
+.verb__rule {
+  margin-bottom: 10px;
+}
+
+.verb__rule_bold {
+  font-weight: 700;
+}
+
+.verb__rule_underline {
+  font-style: oblique;
+}
