@@ -8,6 +8,7 @@
   background-color: #242424;
 
   --primery: rgb(71, 103, 198);
+  --dark: #242424;
 }
 
 body {

@@ -1,0 +1,25 @@
+.list-of-verbs__container {
+  padding: 10px;
+  flex-grow: 1;
+}
+
+.categories__container {
+  position: relative;
+}
+
+.categories {
+  width: 35vw;
+  padding: 5px 10px;
+  background-color: white;
+  color: var(--dark);
+  text-align: center;
+}
+
+.categories-items {
+  position: absolute;
+  width: 35%;
+  z-index: 10;
+  span {
+    width: 100%;
+  }
+}

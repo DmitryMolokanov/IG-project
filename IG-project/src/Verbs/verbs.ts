@@ -1,4 +1,6 @@
-export const verbs = [
+import { VerbsObjType } from "../Types/types";
+
+export const verbs: VerbsObjType[] = [
   {
     word: "anticipate",
     example: "We didn’t anticipate winning this match.",

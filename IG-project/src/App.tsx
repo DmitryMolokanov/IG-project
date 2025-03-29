@@ -2,11 +2,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import AppLayout from "./layouts/AppLayout";
 import MainPage from "./pages/MainPage/MainPage";
-import ListOfVerbs from "./pages/ListOfVerbs/ListOfVerbs";
+import VerbListPage from "./pages/ListOfVerbs/VerbListPage";
 
 const paths = [
   { path: "/", element: <MainPage /> },
-  { path: "/list-of-verbs", element: <ListOfVerbs /> },
+  { path: "/list-of-verbs", element: <VerbListPage /> },
 ];
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
         {paths.map((item) => {
           return (
             <Route
+              key={item.path}
               path={item.path}
               element={<AppLayout>{item.element}</AppLayout>}
             />
