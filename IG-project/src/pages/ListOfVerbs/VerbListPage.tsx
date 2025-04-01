@@ -5,6 +5,8 @@ import VerbList from "./components/VerbList";
 const verbTypesList = [
   { title: "Gerund", type: "gerund" },
   { title: "Infinitive with to", type: "infinitiveTo" },
+  { title: "Infinitive without To", type: "gerund" },
+
 ];
 
 const VerbListPage = () => {

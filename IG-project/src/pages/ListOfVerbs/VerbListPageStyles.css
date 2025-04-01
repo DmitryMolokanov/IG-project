@@ -23,3 +23,11 @@
     width: 100%;
   }
 }
+
+.list-of-verbs__list{
+  margin: 10px 0px;
+}
+
+.list__verb > span{
+  padding: 3px 5px;
+}

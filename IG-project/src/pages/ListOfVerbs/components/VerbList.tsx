@@ -19,10 +19,18 @@ const VerbList: FC<VerbListProps> = ({ selectedCategories }) => {
 
   return (
     <>
-      {selectedVerbs?.map((verb) => {
-        console.log(verb);
-        return <div>{verb.word}</div>;
-      })}
+      <div className='list-of-verbs__list'>
+        {selectedVerbs?.map((verb) => {
+          return <div
+            key={verb.word}
+            className="list__verb"
+          >
+            <span>{verb.word}</span>
+            -
+            <span>{verb.translation}</span>
+          </div>;
+        })}
+      </div>
     </>
   );
 };
