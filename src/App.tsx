@@ -2,11 +2,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import AppLayout from "./layouts/AppLayout";
 import MainPage from "./pages/MainPage/MainPage";
-import VerbListPage from "./pages/ListOfVerbs/VerbListPage";
+import VerbListPage from "./pages/VerbsListPage/VerbListPage";
 
 const paths = [
   { path: "/", element: <MainPage /> },
-  { path: "/list-of-verbs", element: <VerbListPage /> },
+  { path: "/verb_list", element: <VerbListPage /> },
+  { path: "/*", element: <div>Error</div> },
 ];
 
 function App() {
