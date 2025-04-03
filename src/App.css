@@ -11,6 +11,11 @@
   min-height: 100vh;
 }
 
+.wrap-main-content{
+    padding: 10px;
+    flex-grow: 1;
+}
+
 .btn {
   border: 0;
 }

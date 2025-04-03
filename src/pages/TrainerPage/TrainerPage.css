@@ -1,0 +1,44 @@
+.trainer__container{
+
+}
+
+.trainer__info{
+
+}
+
+.trainer__verb-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+    height: 160px;
+}
+
+.trainer__verb-container > span {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.trainer__translate-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+}
+
+.trainer__translate{
+    font-size: 20px;
+}
+
+.trainer__example{
+    font-size: 18px;
+}
+
+.trainer__btn-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}

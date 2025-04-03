@@ -10,7 +10,9 @@ const Header = () => {
       <button className="btn header__btn">
         <Link to="/verb_list"> List of verbs</Link>
       </button>
-      <button className="btn header__btn">Start</button>
+      <button className="btn header__btn">
+        <Link to="/trainer">Trainer</Link>
+      </button>
     </div>
   );
 };

@@ -2,14 +2,9 @@ import { useState } from "react";
 import "./VerbListPageStyles.css";
 import VerbList from "./components/VerbList";
 import { VerbConvertType } from "../../Types/types";
+import { verbsConvertList } from "../../constant/verbsConvert";
 
-const verbTypesList: VerbConvertType[] = [
-  { title: "Gerund", type: "gerund" },
-  { title: "Infinitive with to", type: "infinitiveTo" },
-  { title: "Infinitive without to", type: "infinitiveWithoutTo" },
-  { title: "Both equally", type: "both" },
-  { title: "Both different", type: "bothDifferent" },
-];
+
 
 const VerbListPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +20,7 @@ const VerbListPage = () => {
   };
 
   return (
-    <div className="list-of-verbs__container">
+    <div>
       <div className="categories__container">
         <div
           className="categories"
@@ -36,7 +31,7 @@ const VerbListPage = () => {
         </div>
         {isOpen ? (
           <div className="categories-items">
-            {verbTypesList.map((item) => {
+            {verbsConvertList.map((item) => {
               return (
                 <div
                   className="categories"

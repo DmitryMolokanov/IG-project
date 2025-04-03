@@ -10,7 +10,9 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
   return (
     <div className="main-container">
       <Header />
-      {children}
+      <div className="wrap-main-content">
+        {children}
+      </div>
       <Footer />
     </div>
   );

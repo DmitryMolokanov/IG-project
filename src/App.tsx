@@ -3,10 +3,12 @@ import "./App.css";
 import AppLayout from "./layouts/AppLayout";
 import MainPage from "./pages/MainPage/MainPage";
 import VerbListPage from "./pages/VerbsListPage/VerbListPage";
+import TrainerPage from "./pages/TrainerPage/TrainerPage";
 
 const paths = [
   { path: "/", element: <MainPage /> },
   { path: "/verb_list", element: <VerbListPage /> },
+  { path: "/trainer", element: <TrainerPage /> },
   { path: "/*", element: <div>Error</div> },
 ];
 
