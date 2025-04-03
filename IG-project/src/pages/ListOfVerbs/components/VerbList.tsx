@@ -1,10 +1,10 @@
 import { FC, useEffect, useState } from "react";
 import "../VerbListPageStyles.css";
 import { verbs } from "../../../Verbs/verbs";
-import { VerbsObjType } from "../../../Types/types";
+import { VerbConvertType, VerbsObjType } from "../../../Types/types";
 
 interface VerbListProps {
-  selectedCategories: string;
+  selectedCategories: VerbConvertType | undefined;
 }
 
 const VerbList: FC<VerbListProps> = ({ selectedCategories }) => {
@@ -12,7 +12,7 @@ const VerbList: FC<VerbListProps> = ({ selectedCategories }) => {
 
   useEffect(() => {
     const selectedVerbs = verbs.filter((verb) => {
-      return verb.type === selectedCategories;
+      return verb.type === selectedCategories?.type;
     });
     setSelectedVerbs(selectedVerbs);
   }, [selectedCategories]);
@@ -20,16 +20,29 @@ const VerbList: FC<VerbListProps> = ({ selectedCategories }) => {
   return (
     <>
       <div className='list-of-verbs__list'>
-        {selectedVerbs?.map((verb) => {
-          return <div
-            key={verb.word}
-            className="list__verb"
-          >
-            <span>{verb.word}</span>
-            -
-            <span>{verb.translation}</span>
-          </div>;
-        })}
+        <table className="list-table">
+          <thead>
+            <tr>
+              <th>
+                Word
+              </th>
+              <th>
+                Translate
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {selectedVerbs?.map((verb) => {
+              return <tr
+                key={verb.word}
+              // className="list__verb"
+              >
+                <td>{verb.word}</td>
+                <td>{verb.translation}</td>
+              </tr>;
+            })}
+          </tbody>
+        </table>
       </div>
     </>
   );

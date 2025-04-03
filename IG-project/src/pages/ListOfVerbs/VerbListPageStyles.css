@@ -8,7 +8,7 @@
 }
 
 .categories {
-  width: 35vw;
+  width: 40vw;
   padding: 5px 10px;
   background-color: white;
   color: var(--dark);
@@ -30,4 +30,20 @@
 
 .list__verb > span{
   padding: 3px 5px;
+}
+
+.list-table{
+  border-collapse: collapse;
+  border: 1px solid white;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.list-table > thead > tr > th {
+  border: 1px solid white;
+}
+
+.list-table > tbody > tr > td {
+  padding: 3px 5px;
+  border: 1px solid white;
 }

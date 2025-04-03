@@ -7,6 +7,6 @@
 .header__btn {
   width: 50%;
   color: white;
-  background-color: var(--primery);
+  background-color: var(--primary);
   font-size: 18px;
 }

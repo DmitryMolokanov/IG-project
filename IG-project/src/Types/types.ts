@@ -4,3 +4,8 @@ export interface VerbsObjType {
   translation: string;
   type: string;
 }
+
+export interface VerbConvertType {
+  title: string,
+  type: string
+}

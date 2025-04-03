@@ -1,23 +1,25 @@
 import { useState } from "react";
 import "./VerbListPageStyles.css";
 import VerbList from "./components/VerbList";
+import { VerbConvertType } from "../../Types/types";
 
-const verbTypesList = [
+const verbTypesList: VerbConvertType[] = [
   { title: "Gerund", type: "gerund" },
   { title: "Infinitive with to", type: "infinitiveTo" },
-  { title: "Infinitive without To", type: "gerund" },
-
+  { title: "Infinitive without to", type: "infinitiveWithoutTo" },
+  { title: "Both equally", type: "both" },
+  { title: "Both different", type: "bothDifferent" },
 ];
 
 const VerbListPage = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedCategories, setSelectedCategories] = useState("");
+  const [selectedCategories, setSelectedCategories] = useState<VerbConvertType | undefined>(undefined);
 
   const handleCategoriesOpen = () => {
     setIsOpen((prev) => !prev);
   };
 
-  const selectCategories = (type: string) => {
+  const selectCategories = (type: VerbConvertType) => {
     setSelectedCategories(type);
     handleCategoriesOpen();
   };
@@ -30,7 +32,7 @@ const VerbListPage = () => {
           role="button"
           onClick={handleCategoriesOpen}
         >
-          <span>Select categories</span>
+          <span>{selectedCategories ? selectedCategories.title : "Select categories"}</span>
         </div>
         {isOpen ? (
           <div className="categories-items">
@@ -40,7 +42,7 @@ const VerbListPage = () => {
                   className="categories"
                   key={item.title}
                   role="button"
-                  onClick={() => selectCategories(item.type)}
+                  onClick={() => selectCategories(item)}
                 >
                   <span>{item.title}</span>
                 </div>

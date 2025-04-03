@@ -1,0 +1,15 @@
+{
+    "name": "Gerund or Infinitive",
+    "short_name": "IorG",
+    "description": "A progressive web app that will help you learn English verbs",
+    "icons": [
+      {
+        "src": "eng.png",
+        "sizes": "32x32",
+        "type": "image/png"
+      }
+    ],
+    "display": "fullscreen",
+    "theme_color": "#55aeed",
+    "background_color": "#55aeed"
+  }
