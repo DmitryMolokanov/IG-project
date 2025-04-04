@@ -3,13 +3,39 @@
 }
 
 .trainer__info{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
 
+.trainer__info__number{
+    display: flex;
+}
+
+.trainer__info__answer{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.trainer__info__answer-correct__title{
+    color: green;
+}
+
+.trainer__info__answer-incorrect__title{
+    color:red;
+}
+
+.trainer__info__answer-count{
+    margin-left: 10px;
+    transition: 1s;
 }
 
 .trainer__verb-container{
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-top: 10px;
     margin-bottom: 30px;
     height: 160px;
 }
@@ -41,4 +67,17 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
+}
+
+.trainer__btn {
+    border: 0;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: royalblue;
+    color: rgba(255, 255, 255, 0.87);
+    transition: .1s ease-out;
+}
+
+.trainer__btn:active {
+    transform: scale(0.97);
 }
