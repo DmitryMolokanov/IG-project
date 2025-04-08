@@ -3,15 +3,16 @@ import './TrainerPage.css'
 import { VerbsObjType } from '../../Types/types';
 import { verbs } from '../../constant/verbs';
 import { verbsConvertList } from '../../constant/verbsConvert';
+import { useTrainerStore } from '../../store/TrainerStore';
 
-const initialInfo = { allVerbs: verbs.length, repeated: 0, correct: 0, incorrect: 0 }
 
 const TrainerPage = () => {
+
+    const { repeated, correct, incorrect, correctAnswer, incorrectAnswer } = useTrainerStore()
 
     const [currentVerb, setCurrentVerb] = useState<VerbsObjType>()
     const [remaningVerbs, setRemaningVerbs] = useState<VerbsObjType[] | undefined>(undefined)
     const [showTranslate, setShowTranslate] = useState(false)
-    const [info, setInfo] = useState(initialInfo)
 
 
     const deleteCurrentVerb = (arrVerbs: VerbsObjType[]) => {
@@ -33,12 +34,12 @@ const TrainerPage = () => {
         if (type === currentVerb?.type) {
             target.style.background = 'green'
             returnBackground()
-            setInfo({ ...info, repeated: info.repeated + 1, correct: info.correct + 1 })
+            correctAnswer()
         } else {
             target.style.background = 'red'
             returnBackground()
             window.navigator.vibrate(200)
-            setInfo({ ...info, repeated: info.repeated + 1, incorrect: info.incorrect + 1 })
+            incorrectAnswer()
         }
 
         if (remaningVerbs) {
@@ -63,16 +64,16 @@ const TrainerPage = () => {
         <div className='trainer__container'>
             <div className='trainer__info'>
                 <div className='trainer__info__number'>
-                    <span>{info.allVerbs}</span> / <span>{info.repeated}</span>
+                    <span>{verbs.length}</span> / <span>{repeated}</span>
                 </div>
                 <div className='trainer__info__answer'>
                     <div className='trainer__info__answer-correct'>
                         <span className='trainer__info__answer-correct__title'>Correct:</span>
-                        <span className='trainer__info__answer-count'>{info.correct}</span>
+                        <span className='trainer__info__answer-count'>{correct}</span>
                     </div>
                     <div className='trainer__info__answer-incorrect'>
                         <span className='trainer__info__answer-incorrect__title'>Incorrect:</span>
-                        <span className='trainer__info__answer-count'>{info.incorrect}</span>
+                        <span className='trainer__info__answer-count'>{incorrect}</span>
                     </div>
                 </div>
             </div>
