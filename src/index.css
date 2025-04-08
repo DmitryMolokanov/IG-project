@@ -7,8 +7,10 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
-  --primary: rgb(71, 103, 198);
+  --primary: #2d545e;
   --dark: #242424;
+
+  --btn-primary: #e1b382;
 }
 
 body {

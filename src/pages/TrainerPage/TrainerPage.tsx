@@ -34,14 +34,14 @@ const TrainerPage = () => {
     const target = e.target as HTMLElement;
 
     const returnBackground = () =>
-      setTimeout(() => (target.style.background = "royalblue"), 200);
+      setTimeout(() => (target.style.background = "#e1b382"), 200);
 
     if (type === currentVerb?.type) {
-      target.style.background = "green";
+      target.style.background = "#59ce8f";
       returnBackground();
       correctAnswer(currentVerb);
     } else {
-      target.style.background = "red";
+      target.style.background = "#ff1e00";
       returnBackground();
       window.navigator.vibrate(200);
       incorrectAnswer(currentVerb);
