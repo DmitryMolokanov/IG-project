@@ -13,9 +13,8 @@ const TrainerPage = () => {
     incorrect,
     correctAnswer,
     incorrectAnswer,
+    reset,
   } = useTrainerStore();
-
-  console.log(remaningVerbs.length);
 
   const [currentVerb, setCurrentVerb] = useState<VerbsObjType | undefined>(
     undefined
@@ -33,21 +32,26 @@ const TrainerPage = () => {
   ) => {
     const target = e.target as HTMLElement;
 
-    const returnBackground = () =>
+    const returnBackground = () => {
       setTimeout(() => (target.style.background = "#e1b382"), 200);
+    };
+
+    const filterVerb = remaningVerbs.filter(
+      (item) => item.word !== currentVerb?.word
+    );
 
     if (type === currentVerb?.type) {
       target.style.background = "#59ce8f";
       returnBackground();
-      correctAnswer(currentVerb);
+      correctAnswer(filterVerb);
     } else {
       target.style.background = "#ff1e00";
       returnBackground();
       window.navigator.vibrate(200);
-      incorrectAnswer(currentVerb);
+      incorrectAnswer(filterVerb);
     }
 
-    getRandomVerb(remaningVerbs);
+    getRandomVerb(filterVerb);
   };
 
   const openTranslateBlock = () => {
@@ -91,19 +95,24 @@ const TrainerPage = () => {
           </div>
         ) : null}
       </div>
-      <div className="trainer__btn-container">
-        {verbsConvertList.map((item) => {
-          return (
-            <button
-              key={item.title}
-              className="trainer__btn"
-              onClick={(e) => checkVerb(item.type, e)}
-            >
-              {item.title}
-            </button>
-          );
-        })}
-      </div>
+
+      {repeated < verbs.length ? (
+        <div className="trainer__btn-container">
+          {verbsConvertList.map((item) => {
+            return (
+              <button
+                key={item.title}
+                className="trainer__btn"
+                onClick={(e) => checkVerb(item.type, e)}
+              >
+                {item.title}
+              </button>
+            );
+          })}
+        </div>
+      ) : (
+        <button onClick={reset}>Обновить</button>
+      )}
     </div>
   );
 };

@@ -7,8 +7,9 @@ interface AnswerTypes {
   repeated: number;
   correct: number;
   incorrect: number;
-  correctAnswer: (verb: VerbsObjType | undefined) => void;
-  incorrectAnswer: (verb: VerbsObjType | undefined) => void;
+  correctAnswer: (verb: VerbsObjType[]) => void;
+  incorrectAnswer: (verb: VerbsObjType[]) => void;
+  reset: () => void;
 }
 
 export const useTrainerStore = create<AnswerTypes>((set) => ({
@@ -17,22 +18,26 @@ export const useTrainerStore = create<AnswerTypes>((set) => ({
   correct: 0,
   incorrect: 0,
 
-  correctAnswer: (currentVerb: VerbsObjType | undefined) => {
+  correctAnswer: (filterVerb: VerbsObjType[]) => {
     set((state: AnswerTypes) => ({
       repeated: state.repeated + 1,
       correct: state.correct + 1,
-      remaningVerbs: state.remaningVerbs.filter(
-        (item) => item.word !== currentVerb?.word
-      ),
+      remaningVerbs: filterVerb,
     }));
   },
-  incorrectAnswer: (currentVerb: VerbsObjType | undefined) => {
+  incorrectAnswer: (filterVerb: VerbsObjType[]) => {
     set((state: AnswerTypes) => ({
       repeated: state.repeated + 1,
       incorrect: state.incorrect + 1,
-      remaningVerbs: state.remaningVerbs.filter(
-        (item) => item.word !== currentVerb?.word
-      ),
+      remaningVerbs: filterVerb,
+    }));
+  },
+  reset: () => {
+    set(() => ({
+      repeated: 0,
+      correct: 0,
+      incorrect: 0,
+      remaningVerbs: verbs,
     }));
   },
 }));
