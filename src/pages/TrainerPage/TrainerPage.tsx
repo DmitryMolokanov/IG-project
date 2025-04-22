@@ -88,9 +88,9 @@ const TrainerPage = () => {
         <span>{currentVerb?.word}</span>
         {showTranslate ? (
           <div className="trainer__translate-container">
-            <span className="trainer__translate">
-              {currentVerb?.translation}
-            </span>
+            <div className="trainer__translate">
+              <span>{currentVerb?.translation}</span>
+            </div>
             <span className="trainer__example">{currentVerb?.example}</span>
           </div>
         ) : null}
@@ -111,7 +111,15 @@ const TrainerPage = () => {
           })}
         </div>
       ) : (
-        <button onClick={reset}>Обновить</button>
+        <div className="trainer__restart-container">
+          <button
+            onClick={reset}
+            className="trainer__btn"
+          >
+            Restart
+          </button>
+        </div>
+
       )}
     </div>
   );
