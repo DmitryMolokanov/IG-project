@@ -1,83 +1,82 @@
-.trainer__container{
-
+.trainer__container {
 }
 
-.trainer__info{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+.trainer__info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.trainer__info__number{
-    display: flex;
+.trainer__info__number {
+  display: flex;
 }
 
-.trainer__info__answer{
-    display: flex;
-    justify-content: space-between;
-    width: 50%;
+.trainer__info__answer {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
 }
 
-.trainer__info__answer-correct__title{
-    color: green;
+.trainer__info__answer-correct__title {
+  color: #59ce8f;
 }
 
-.trainer__info__answer-incorrect__title{
-    color:red;
+.trainer__info__answer-incorrect__title {
+  color: #ff1e00;
 }
 
-.trainer__info__answer-count{
-    margin-left: 10px;
-    transition: 1s;
+.trainer__info__answer-count {
+  margin-left: 5px;
+  transition: 1s;
 }
 
-.trainer__verb-container{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    height: 160px;
+.trainer__verb-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  height: 160px;
 }
 
 .trainer__verb-container > span {
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
-.trainer__translate-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 60%;
+.trainer__translate-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 60%;
 }
 
-.trainer__translate{
-    font-size: 20px;
+.trainer__translate {
+  font-size: 20px;
 }
 
-.trainer__example{
-    font-size: 18px;
+.trainer__example {
+  font-size: 18px;
 }
 
-.trainer__btn-container{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
+.trainer__btn-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .trainer__btn {
-    border: 0;
-    border-radius: 5px;
-    padding: 10px;
-    background-color: royalblue;
-    color: rgba(255, 255, 255, 0.87);
-    transition: .1s ease-out;
+  border: 0;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: var(--btn-primary);
+  color: var(--primary);
+  transition: 0.1s ease-out;
 }
 
 .trainer__btn:active {
-    transform: scale(0.97);
+  transform: scale(0.97);
 }
