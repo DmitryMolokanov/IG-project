@@ -4,11 +4,13 @@ import AppLayout from "./layouts/AppLayout";
 import MainPage from "./pages/MainPage/MainPage";
 import VerbListPage from "./pages/VerbsListPage/VerbListPage";
 import TrainerPage from "./pages/TrainerPage/TrainerPage";
+import MistakePage from "./pages/MistakePage/MistakePage";
 
 const paths = [
   { path: "/", element: <MainPage /> },
   { path: "/verb_list", element: <VerbListPage /> },
   { path: "/trainer", element: <TrainerPage /> },
+  { path: "/mistake", element: <MistakePage /> },
   { path: "/*", element: <div>Error</div> },
 ];
 

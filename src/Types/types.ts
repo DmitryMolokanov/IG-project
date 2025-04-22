@@ -3,6 +3,7 @@ export interface VerbsObjType {
   example: string;
   translation: string;
   type: string;
+  title: string,
 }
 
 export interface VerbConvertType {

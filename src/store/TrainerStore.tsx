@@ -4,16 +4,19 @@ import { VerbsObjType } from "../Types/types";
 
 interface AnswerTypes {
   remaningVerbs: VerbsObjType[];
+  mistakeVerbs: VerbsObjType[];
   repeated: number;
   correct: number;
   incorrect: number;
   correctAnswer: (verb: VerbsObjType[]) => void;
   incorrectAnswer: (verb: VerbsObjType[]) => void;
+  addMistake: (verb: VerbsObjType) => void
   reset: () => void;
 }
 
 export const useTrainerStore = create<AnswerTypes>((set) => ({
   remaningVerbs: verbs,
+  mistakeVerbs: [],
   repeated: 0,
   correct: 0,
   incorrect: 0,
@@ -32,6 +35,12 @@ export const useTrainerStore = create<AnswerTypes>((set) => ({
       remaningVerbs: filterVerb,
     }));
   },
+  addMistake: (mistake: VerbsObjType) => {
+    set((state: AnswerTypes) => ({
+      mistakeVerbs: [...state.mistakeVerbs, mistake]
+    }))
+  },
+
   reset: () => {
     set(() => ({
       repeated: 0,

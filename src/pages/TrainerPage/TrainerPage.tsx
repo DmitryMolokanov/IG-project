@@ -4,6 +4,7 @@ import { VerbsObjType } from "../../Types/types";
 import { verbs } from "../../constant/verbs";
 import { verbsConvertList } from "../../constant/verbsConvert";
 import { useTrainerStore } from "../../store/TrainerStore";
+import { Link } from "react-router-dom";
 
 const TrainerPage = () => {
   const {
@@ -13,6 +14,7 @@ const TrainerPage = () => {
     incorrect,
     correctAnswer,
     incorrectAnswer,
+    addMistake,
     reset,
   } = useTrainerStore();
 
@@ -25,6 +27,7 @@ const TrainerPage = () => {
     const verbIndex = Math.floor(Math.random() * arrVerbs.length);
     setCurrentVerb(arrVerbs[verbIndex]);
   };
+
 
   const checkVerb = (
     type: string,
@@ -49,6 +52,8 @@ const TrainerPage = () => {
       returnBackground();
       window.navigator.vibrate(200);
       incorrectAnswer(filterVerb);
+      if (currentVerb) addMistake(currentVerb)
+
     }
 
     getRandomVerb(filterVerb);
@@ -119,8 +124,13 @@ const TrainerPage = () => {
             Restart
           </button>
         </div>
-
       )}
+
+      <div className="trainer__link-btn__container">
+        <button className="trainer__link-btn">
+          <Link to={'/mistake'}>Show mistakes</Link>
+        </button>
+      </div>
     </div>
   );
 };

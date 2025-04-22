@@ -1,4 +1,7 @@
 .trainer__container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .trainer__info {
@@ -93,4 +96,23 @@
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+.trainer__link-btn__container{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.trainer__link-btn {
+  border: 2px solid var(--btn-primary);
+  border-radius: 5px;
+  padding: 10px;
+  background-color: var(--primary) ;
+  transition: 0.1s ease-out;
+  a{
+    color:var(--btn-primary);
+    font-weight: 600;
+  }
 }
