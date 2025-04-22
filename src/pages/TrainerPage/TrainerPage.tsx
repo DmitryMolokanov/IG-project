@@ -8,11 +8,16 @@ import { useTrainerStore } from '../../store/TrainerStore';
 
 const TrainerPage = () => {
 
-    const { repeated, correct, incorrect, correctAnswer, incorrectAnswer } = useTrainerStore()
-
     const [currentVerb, setCurrentVerb] = useState<VerbsObjType>()
     const [remaningVerbs, setRemaningVerbs] = useState<VerbsObjType[] | undefined>(undefined)
     const [showTranslate, setShowTranslate] = useState(false)
+
+    const {
+        repeated,
+        correct,
+        incorrect,
+        correctAnswer,
+        incorrectAnswer } = useTrainerStore()
 
 
     const deleteCurrentVerb = (arrVerbs: VerbsObjType[]) => {
