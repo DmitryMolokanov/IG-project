@@ -5,9 +5,11 @@ const MistakePage = () => {
 
     const { mistakeVerbs } = useTrainerStore();
 
+    const reverseMistakeVerbs = mistakeVerbs.reverse()
+
     return (
         <div>
-            <VerbTable verbList={mistakeVerbs} secondCollumn={'title'} />
+            <VerbTable verbList={reverseMistakeVerbs} secondCollumn={'title'} />
         </div>
     )
 };

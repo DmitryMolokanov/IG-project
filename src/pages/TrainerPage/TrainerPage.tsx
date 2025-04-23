@@ -53,7 +53,6 @@ const TrainerPage = () => {
       window.navigator.vibrate(200);
       incorrectAnswer(filterVerb);
       if (currentVerb) addMistake(currentVerb)
-
     }
 
     getRandomVerb(filterVerb);

@@ -47,6 +47,7 @@ export const useTrainerStore = create<AnswerTypes>((set) => ({
       correct: 0,
       incorrect: 0,
       remaningVerbs: verbs,
+      mistakeVerbs: []
     }));
   },
 }));
