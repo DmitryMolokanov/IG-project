@@ -11,7 +11,7 @@ interface AnswerTypes {
   correctAnswer: (verb: VerbsObjType[]) => void;
   incorrectAnswer: (verb: VerbsObjType[]) => void;
   addMistake: (verb: VerbsObjType) => void
-  reset: () => void;
+  restart: () => void;
 }
 
 export const useTrainerStore = create<AnswerTypes>((set) => ({
@@ -41,7 +41,7 @@ export const useTrainerStore = create<AnswerTypes>((set) => ({
     }))
   },
 
-  reset: () => {
+  restart: () => {
     set(() => ({
       repeated: 0,
       correct: 0,

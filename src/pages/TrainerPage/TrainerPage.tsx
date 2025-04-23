@@ -15,7 +15,7 @@ const TrainerPage = () => {
     correctAnswer,
     incorrectAnswer,
     addMistake,
-    reset,
+    restart,
   } = useTrainerStore();
 
   const [currentVerb, setCurrentVerb] = useState<VerbsObjType | undefined>(
@@ -118,7 +118,7 @@ const TrainerPage = () => {
       ) : (
         <div className="trainer__restart-container">
           <button
-            onClick={reset}
+            onClick={restart}
             className="trainer__btn"
           >
             Restart
@@ -129,6 +129,12 @@ const TrainerPage = () => {
       <div className="trainer__link-btn__container">
         <button className="trainer__link-btn">
           <Link to={'/mistake'}>Show mistakes</Link>
+        </button>
+        <button
+          onClick={restart}
+          className="trainer__link-btn"
+        >
+          Restart
         </button>
       </div>
     </div>
