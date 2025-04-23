@@ -1,7 +1,7 @@
 .trainer__container {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 80vh;
 }
 
 .trainer__info {
@@ -62,7 +62,7 @@
   display: flex;
   justify-content: center;
   position: sticky;
-  top:0;
+  top: 0;
   width: 100%;
   background-color: var(--dark);
   font-size: 20px;
@@ -98,22 +98,30 @@
   width: 100%;
 }
 
-.trainer__link-btn__container{
+.trainer__link-btn__container {
   display: flex;
   justify-content: flex-end;
+  align-items: flex-end;
   width: 100%;
   flex-grow: 1;
+  gap: 10px;
+  transition: 1s;
 }
 
 .trainer__link-btn {
   border: 2px solid var(--btn-primary);
   border-radius: 5px;
   padding: 10px;
-  background-color: var(--primary) ;
+  background-color: var(--primary);
   transition: 0.1s ease-out;
-  color:var(--btn-primary);
-  a{
-    color:var(--btn-primary);
+  color: var(--btn-primary);
+  a {
+    color: var(--btn-primary);
     font-weight: 600;
   }
+}
+
+.top_center {
+  justify-content: center;
+  align-items: flex-start;
 }

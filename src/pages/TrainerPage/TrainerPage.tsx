@@ -28,7 +28,6 @@ const TrainerPage = () => {
     setCurrentVerb(arrVerbs[verbIndex]);
   };
 
-
   const checkVerb = (
     type: string,
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -52,7 +51,7 @@ const TrainerPage = () => {
       returnBackground();
       window.navigator.vibrate(200);
       incorrectAnswer(filterVerb);
-      if (currentVerb) addMistake(currentVerb)
+      if (currentVerb) addMistake(currentVerb);
     }
 
     getRandomVerb(filterVerb);
@@ -114,26 +113,18 @@ const TrainerPage = () => {
             );
           })}
         </div>
-      ) : (
-        <div className="trainer__restart-container">
-          <button
-            onClick={restart}
-            className="trainer__btn"
-          >
-            Restart
-          </button>
-        </div>
-      )}
+      ) : null}
 
-      <div className="trainer__link-btn__container">
-        <button className="trainer__link-btn">
-          <Link to={'/mistake'}>Show mistakes</Link>
-        </button>
-        <button
-          onClick={restart}
-          className="trainer__link-btn"
-        >
+      <div
+        className={`trainer__link-btn__container ${
+          repeated >= verbs.length ? "top_center" : ""
+        }`}
+      >
+        <button onClick={restart} className="trainer__link-btn">
           Restart
+        </button>
+        <button className="trainer__link-btn">
+          <Link to={"/mistake"}>Show mistakes</Link>
         </button>
       </div>
     </div>
